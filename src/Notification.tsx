@@ -105,7 +105,7 @@ const Alert = (props: AlertProps) => {
   useEffect(() => {
     setTimeout(() => {
       destroy();
-    }, 3000);
+    }, 10000);
   }, []);
 
   return (
