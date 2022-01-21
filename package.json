@@ -1,10 +1,10 @@
 {
-  "name": "react-use-notification",
+  "name": "react-easy-notification",
   "version": "1.0.0",
   "description": "A notification component supported by react hooks",
   "author": "xzhuangaa",
   "license": "Apache-2.0",
-  "repository": "XiangZhuang/react-use-notification",
+  "repository": "XiangZhuang/react-easy-notification",
   "main": "dist/index.js",
   "engines": {
     "node": ">=8",
