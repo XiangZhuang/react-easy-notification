@@ -1,5 +1,11 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from "react";
-import { IoCloseOutline } from "react-icons/all";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { IoCloseOutline } from "react-icons/io5";
 import style from "./Notification.module.scss";
 
 interface Notification {
