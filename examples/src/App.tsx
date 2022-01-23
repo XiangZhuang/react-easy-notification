@@ -38,7 +38,7 @@ const App = () => {
   };
   return (
     <div>
-      <Notifications />
+      <Notifications timeout={5000} />
       <div onClick={onPushPlainNotification}>
         <p>Push Plain Notification</p>
       </div>
