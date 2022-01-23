@@ -39,6 +39,11 @@
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
   }
+  > .plain {
+    background-color: white;
+    color: #333;
+    border-color: #333;
+  }
   > .success {
     background-color: #d4edda;
     color: #155724;

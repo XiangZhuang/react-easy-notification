@@ -6,6 +6,12 @@ import {
 
 const App = () => {
   const { pushNotification } = useNotification();
+  const onPushPlainNotification = () => {
+    pushNotification({
+      type: "plain",
+      text: "This is a plain notification",
+    });
+  };
   const onPushSuccessNotification = () => {
     pushNotification({
       type: "success",
@@ -33,6 +39,9 @@ const App = () => {
   return (
     <div>
       <Notifications />
+      <div onClick={onPushPlainNotification}>
+        <p>Push Plain Notification</p>
+      </div>
       <div onClick={onPushSuccessNotification}>
         <p>Push Success Notification</p>
       </div>
