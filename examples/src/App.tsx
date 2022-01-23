@@ -24,6 +24,12 @@ const App = () => {
       text: "This is a notification of warning",
     });
   };
+  const onPushDangerNotification = () => {
+    pushNotification({
+      type: "danger",
+      text: "This is a notification of danger",
+    });
+  };
   return (
     <div>
       <Notifications />
@@ -35,6 +41,9 @@ const App = () => {
       </div>
       <div onClick={onPushWarningNotification}>
         <p>Push Warning Notification</p>
+      </div>
+      <div onClick={onPushDangerNotification}>
+        <p>Push Danger Notification</p>
       </div>
     </div>
   );
