@@ -10,7 +10,7 @@ import style from "./Notification.module.scss";
 
 interface Notification {
   id: number;
-  type: "success" | "danger" | "warning" | "info";
+  type: "plain" | "success" | "danger" | "warning" | "info";
   text: string;
 }
 
@@ -71,6 +71,7 @@ const NotificationProvider = (props: { children: any }) => {
 
 interface AlertProps {
   notification: Notification;
+  timeout: number;
   heights: Array<{ id: number; value: number }>;
   addHeight: (id: number, value: number) => void;
   removeHeight: (id: number) => void;
@@ -78,7 +79,7 @@ interface AlertProps {
 
 const Alert = (props: AlertProps) => {
   const { notifications, removeNotification } = useNotification();
-  const { notification, heights, addHeight, removeHeight } = props;
+  const { notification, heights, timeout, addHeight, removeHeight } = props;
   const [show, setShow] = useState(true);
 
   // Check if is unmounted
@@ -111,7 +112,7 @@ const Alert = (props: AlertProps) => {
   useEffect(() => {
     setTimeout(() => {
       destroy();
-    }, 10000);
+    }, timeout);
   }, []);
 
   return (
@@ -131,7 +132,7 @@ const Alert = (props: AlertProps) => {
       }}
     >
       <div className={style.content}>
-        <p>{notification.text}</p>
+        <p className={style.text}>{notification.text}</p>
       </div>
       <div className={style.close} onClick={() => destroy()}>
         <IoCloseOutline size={22} />
@@ -140,7 +141,12 @@ const Alert = (props: AlertProps) => {
   );
 };
 
-const Notifications = () => {
+interface NotificationsProps {
+  timeout?: number;
+}
+
+const Notifications = (props: NotificationsProps) => {
+  const { timeout = 3000 } = props;
   const { notifications } = useNotification();
   const [heights, setHeights] = useState<
     Array<{
@@ -169,6 +175,7 @@ const Notifications = () => {
           heights={heights}
           addHeight={addHeight}
           removeHeight={removeHeight}
+          timeout={timeout}
         />
       ))}
     </div>
