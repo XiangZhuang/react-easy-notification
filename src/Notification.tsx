@@ -10,7 +10,7 @@ import style from "./Notification.module.scss";
 
 interface Notification {
   id: number;
-  type: "success" | "danger" | "warning" | "info";
+  type: "plain" | "success" | "danger" | "warning" | "info";
   text: string;
 }
 
@@ -131,7 +131,7 @@ const Alert = (props: AlertProps) => {
       }}
     >
       <div className={style.content}>
-        <p>{notification.text}</p>
+        <p className={style.text}>{notification.text}</p>
       </div>
       <div className={style.close} onClick={() => destroy()}>
         <IoCloseOutline size={22} />

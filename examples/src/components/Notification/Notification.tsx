@@ -10,7 +10,7 @@ import style from "./Notification.module.scss";
 
 interface Notification {
   id: number;
-  type: "success" | "danger" | "warning" | "info";
+  type: "plain" | "success" | "danger" | "warning" | "info";
   text: string;
 }
 
