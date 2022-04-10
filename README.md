@@ -6,7 +6,7 @@ Notification component and hooks provided for react development
 This package provides three exports:
 `NotificationProvider`, `Notifications`, `useNotification`
 <br/><br/>
-####NotificationProvider
+#### NotificationProvider
 `NotificationProvider` is required to wrap the whole application.
 
 ```javascript
@@ -25,7 +25,7 @@ ReactDOM.render(<NotificationProvider></NotificationProvider>)
 ```
 <br/>
 
-####Notifications
+#### Notifications
 `Notifications` is the component to render notifications
 
 ```javascript
@@ -44,7 +44,7 @@ export default App;
 ```
 <br/>
 
-####useNotification
+#### useNotification
 
 `useNotification` provides three utility tools
 
